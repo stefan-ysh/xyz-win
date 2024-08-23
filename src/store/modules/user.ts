@@ -23,6 +23,7 @@ export const useUserStore = defineStore({
       this.refreshToken = token;
       localStorage.setItem("refreshToken", token);
     },
+    // 如何调用
     async login(loginData: LoginData) {
       try {
         const { data } = await loginApi(loginData);

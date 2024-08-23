@@ -37,8 +37,11 @@
 
 <script setup>
 import { ref } from 'vue';
-import { sendMsgCode, loginApi } from '@/api/auth';
+import { sendMsgCode } from '@/api/auth';
+import { useUserStore } from '@/store/modules/user';
 import { useRouter } from 'vue-router';
+
+const userStore = useUserStore();
 
 const router = useRouter();
 
@@ -75,8 +78,8 @@ const sendVerificationCode = async () => {
 
 const handleSubmit = async () => {
     console.log('Logging in with', phone.value, verificationCode.value);
-    const res = await loginApi({ mobilePhoneNumber: phone.value, verifyCode: verificationCode.value });
-    if (res.code === 200) {
+    const res = await userStore.login({ mobilePhoneNumber: phone.value, verifyCode: verificationCode.value });
+    if (res) {
         console.log('登录成功');
         router.replace('/');
     } else {

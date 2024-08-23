@@ -15,7 +15,7 @@ const getList = async () => {
     const d = {
         uid: '61adc462e0f5e723bb76b47d',
         // loadMoreKey: loadMoreKey.value,
-        subscribedAt: new Date().toISOString()
+        // subscribedAt: new Date().toISOString()
     }
 
     const res = await getSubscription(d)

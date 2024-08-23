@@ -1,10 +1,12 @@
-import axios, { InternalAxiosRequestConfig, AxiosResponse } from "axios";
-import { useUserStoreHook } from "@/store/modules/user";
 import { refreshTokenApi } from "@/api/auth/index";
 import router from "@/router/index";
+import { useUserStoreHook } from "@/store/modules/user";
+import axios, { AxiosResponse, InternalAxiosRequestConfig } from "axios";
+
 // 创建 axios 实例
 const service = axios.create({
-  baseURL: import.meta.env.VITE_APP_BASE_API,
+  // baseURL: import.meta.env.VITE_APP_BASE_API,
+  baseURL: "/api",
   timeout: 50000,
   headers: { "Content-Type": "application/json;charset=utf-8" },
 });
@@ -52,6 +54,9 @@ service.interceptors.response.use(
           router.push("/login");
           return Promise.reject(error);
         }
+      }
+      if (status === 400) {
+        router.push("/login");
       }
 
       if (data) {
