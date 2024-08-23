@@ -1,0 +1,45 @@
+{
+  "name": "xyz-desktop",
+  "productName": "小宇宙",
+  "version": "1.0.0",
+  "description": "小宇宙",
+  "main": ".vite/build/main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
+  },
+  "keywords": [],
+  "author": {
+    "name": "yshuai",
+    "email": "stefan_ysh@fomail.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@electron-forge/cli": "^7.2.0",
+    "@electron-forge/maker-deb": "^7.2.0",
+    "@electron-forge/maker-rpm": "^7.2.0",
+    "@electron-forge/maker-squirrel": "^7.2.0",
+    "@electron-forge/maker-zip": "^7.2.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.2.0",
+    "@electron-forge/plugin-vite": "^7.2.0",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "autoprefixer": "^10.4.20",
+    "daisyui": "^4.12.10",
+    "electron": "28.2.3",
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.10",
+    "vue-router": "^4.4.3"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/vue-fontawesome": "^3.0.8",
+    "axios": "^1.7.4",
+    "electron-squirrel-startup": "^1.0.0",
+    "pinia": "^2.2.2",
+    "vue": "^3.4.19"
+  }
+}
