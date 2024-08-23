@@ -1,11 +1,10 @@
 import axios, { InternalAxiosRequestConfig, AxiosResponse } from "axios";
 import { useUserStoreHook } from "@/store/modules/user";
 import { refreshTokenApi } from "@/api/auth/index";
-import router from "../router";
+import router from "@/router/index";
 // 创建 axios 实例
 const service = axios.create({
-  //   baseURL: import.meta.env.VITE_APP_BASE_API,
-  baseURL: "/api",
+  baseURL: import.meta.env.VITE_APP_BASE_API,
   timeout: 50000,
   headers: { "Content-Type": "application/json;charset=utf-8" },
 });
